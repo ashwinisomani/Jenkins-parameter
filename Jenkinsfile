@@ -3,7 +3,7 @@ pipeline {
         environment {
         GIT_REPO = "git@github.com:ashwinisomani/Jenkins-parameter.git"
         GIT_CREDENTIALS_ID = "ashwini.somanisap5@gmail.com"
-      
+        GIT_BRANCH_NAME = "Jenkins-parameter"
     }
   stages {
         stage('Get Code from Git') {
