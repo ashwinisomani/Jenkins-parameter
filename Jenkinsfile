@@ -27,9 +27,7 @@ pipeline {
                                         userRemoteConfigs: [[credentialsId: "${GIT_CREDENTIALS_ID}", url: "${GIT_REPO}"]]
                                     ])
                     }
-                    def getGitBranchName() {
-                            return scm.branches[0].name
-                      }
+                  
                 }
             }
         }
