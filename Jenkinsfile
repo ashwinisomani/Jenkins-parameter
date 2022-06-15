@@ -1,5 +1,10 @@
 pipeline {
     agent any
+        environment {
+        GIT_REPO = "git@github.com:ashwinisomani/Jenkins-parameter.git"
+        GIT_CREDENTIALS_ID = "ashwini.somanisap5@gmail.com"
+        K8S_NAMESPACE = "chartinsight"
+    }
   stages {
         stage('Get Code from Git') {
             steps {
