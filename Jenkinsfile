@@ -1,5 +1,10 @@
 pipeline {
     agent any
-    parameters {
-        gitParameter branchFilter: 'origin.*/(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH'
+    stages { 
+        stage('Git Checkout') {
+            steps {
+                git branch: 'main', url: 'https://<token>@github.com/username/repoName.git'
+            }
+        }
     }
+}
