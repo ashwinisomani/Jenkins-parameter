@@ -1,10 +1,27 @@
 pipeline {
     agent any
-    stages { 
-        stage('Git Checkout') {
+  stages {
+        stage('Get Code from Git') {
             steps {
-                git branch: 'main', url: 'https://<token>@github.com/username/repoName.git'
+                dir ('Jenkins-parameter') {
+                    script {
+                        scmVars =   checkout([
+                                        $class: 'GitSCM',
+                                        branches: [[name: "${GIT_BRANCH_NAME}"]],
+                                        doGenerateSubmoduleConfigurations: false,
+                                        extensions: [
+                                        [$class: 'SubmoduleOption',
+                                        disableSubmodules: false,
+                                        parentCredentials: true,
+                                        recursiveSubmodules: true,
+                                        reference: '',
+                                        trackingSubmodules: false],
+                                        [$class: 'CleanBeforeCheckout']],
+                                        submoduleCfg: [],
+                                        userRemoteConfigs: [[credentialsId: "${GIT_CREDENTIALS_ID}", url: "${GIT_REPO}"]]
+                                    ])
+                    }
+                }
             }
         }
     }
-}
