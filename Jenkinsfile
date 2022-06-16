@@ -27,7 +27,7 @@ pipeline {
       
       stage('Print Branch on Job') {
             steps {
-                echo "${env.branchName}"
+                currentBuild.displayname = "${branchName}"
             }
          }
     }
