@@ -2,7 +2,7 @@ pipeline {
     agent any
         environment {
         GIT_REPO = "ssh://git@github.com:ashwinisomani/Jenkins-parameter.git"
-        GIT_CREDENTIALS_ID = "ashwini.somanisap5@gmail.com"
+        GIT_CREDENTIALS_ID = "asomani"
         GIT_BRANCH_NAME = "master"    
       
     }
