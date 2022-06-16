@@ -3,7 +3,7 @@ pipeline {
         environment {
         GIT_REPO = "ssh://git@github.com:ashwinisomani/Jenkins-parameter.git"
         GIT_CREDENTIALS_ID = "ashwini.somanisap5@gmail.com"
-        GIT_BRANCH_NAME = "Jenkins_parameter"    
+        GIT_BRANCH_NAME = "master"    
       
     }
   stages {
@@ -13,7 +13,7 @@ pipeline {
                     script {
                         scmVars =    checkout([
                                              $class: 'GitSCM', 
-                                              branches: [[name: '*/main']], 
+                                              branches: [[name: "${GIT_BRANCH_NAME}"]],
                                               doGenerateSubmoduleConfigurations: false, 
                                               extensions: [[$class: 'CleanCheckout']], 
                                               submoduleCfg: [], 
