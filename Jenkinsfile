@@ -27,9 +27,6 @@ pipeline {
         }
       
       stage('Print Branch on Job') {
-           environment {
-           CURRENT_BRANCH_NAME = "${GIT_BRANCH_NAME.split('/').size() > 1 ? GIT_BRANCH_NAME.split('/')[1..-1].join('/') : GIT_BRANCH_NAME}"
-            }
           steps {
                script{
                     currentBuild.displayName = scmVars.GIT_COMMIT
