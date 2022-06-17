@@ -26,13 +26,10 @@ pipeline {
         }
       
       stage('Print Branch on Job') {
-          environment{
-                   CURRENT_BRANCH_NAME = "${branchName.split('/').size() > 1 ? branchName.split('/')[1..-1].join('/') : branchName}"
-               }
           }
           steps {
                script{
-                   currentBuild.displayName =  "+${CURRENT_BRANCH_NAME}
+                   currentBuild.displayName = "#"+currentBuild.number+": "+CURRENT_BRANCH_NAME
                 }
              }
           }
