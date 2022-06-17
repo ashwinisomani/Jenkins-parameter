@@ -31,7 +31,7 @@ pipeline {
                script{
                    def branch = ${scmVars.GIT_BRANCH}
                    def commit = ${scmVars.GIT_COMMIT}
-                   print branch
+                   currentBuild.description = branch
             
                 }
              }
