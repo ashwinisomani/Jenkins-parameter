@@ -3,6 +3,7 @@ pipeline {
         environment {
         GIT_REPO = "git@github.com:ashwinisomani/Jenkins-parameter.git"
         GIT_CREDENTIALS_ID = "asomani"
+        GIT_BRANCH_NAME = "*/main"    
           
       
     }
@@ -13,7 +14,7 @@ pipeline {
                     script {
                         scmVars =    checkout([
                                              $class: 'GitSCM', 
-                                              branches: [[name: "${branchName}"]],
+                                              branches: [[name: "${GIT_BRANCH_NAME}"]],
                                               doGenerateSubmoduleConfigurations: false, 
                                               extensions: [[$class: 'CleanCheckout']], 
                                               submoduleCfg: [], 
@@ -27,7 +28,7 @@ pipeline {
       
       stage('Print Branch on Job') {
            environment {
-           CURRENT_BRANCH_NAME = "${GIT_REPO.split('/').size() > 1 ? GIT_REPO.split('/')[1..-1].join('/') : GIT_REPO}"
+           CURRENT_BRANCH_NAME = "${GIT_BRANCH_NAME.split('/').size() > 1 ? GIT_BRANCH_NAME.split('/')[1..-1].join('/') : GIT_BRANCH_NAME}"
             }
           steps {
                script{
