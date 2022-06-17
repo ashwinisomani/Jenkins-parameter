@@ -29,7 +29,7 @@ pipeline {
       stage('Print Branch on Job') {     
           steps {
                script{
-                   currentBuild.description = "${env.GIT_BRANCH} ${env.GIT_COMMIT}" 
+                   currentBuild.description = "${branchName} ${env.GIT_COMMIT}" 
                    
                 }
              }
