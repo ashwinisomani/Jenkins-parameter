@@ -32,7 +32,7 @@ pipeline {
                   
                    def commit = scmVars.GIT_COMMIT
                    def branch = scmVars.GIT_BRANCH
-                   currentBuild.description = "${env.GIT_REVISION}"
+                   currentBuild.description = "${env.GIT_REPO_URL}"
                    
                 }
              }
