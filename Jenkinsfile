@@ -28,7 +28,7 @@ pipeline {
       
       stage('Print Branch on Job') {
           environment{
-              GIT_COMMIT = scmVars.GIT_COMMIT
+              GIT_COMMIT = "scmVars.GIT_COMMIT"
           }
           steps {
                script{
