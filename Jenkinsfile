@@ -26,10 +26,12 @@ pipeline {
             }
         }
       
-      stage('Print Branch on Job') {
+      stage('Print Branch on Job') {     
           steps {
                script{
-                   currentBuild.description = scmVars.GIT_COMMIT
+                   def branch = ${GIT_BRANCH}
+                   def commit = ${GIT_COMMIT}
+                   print "BRANCH: ${BRANCH_NAME}, COMMIT: ${GIT_COMMIT}"
             
                 }
              }
