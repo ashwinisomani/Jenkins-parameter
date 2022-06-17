@@ -29,9 +29,9 @@ pipeline {
       stage('Print Branch on Job') {     
           steps {
                script{
-                   def branch = ${GIT_BRANCH}
-                   def commit = ${GIT_COMMIT}
-                   print "BRANCH: ${BRANCH_NAME}, COMMIT: ${GIT_COMMIT}"
+                   def branch = ${scmVars.GIT_BRANCH}
+                   def commit = ${scmVars.GIT_COMMIT}
+                   print branch
             
                 }
              }
