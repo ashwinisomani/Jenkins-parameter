@@ -29,7 +29,7 @@ pipeline {
       stage('Print Branch on Job') {
           steps {
                script{
-                    currentBuild.displayDescription = scmVars.GIT_COMMIT
+                    currentBuild.description = scmVars.GIT_COMMIT
                 }
              }
           }
