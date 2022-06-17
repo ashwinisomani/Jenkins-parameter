@@ -30,7 +30,7 @@ pipeline {
           steps {
                script{
                     currentBuild.description = scmVars.GIT_BRANCH
-                    currentBuild.description = scmVars.GIT_COMMIT
+            
                 }
              }
           }
