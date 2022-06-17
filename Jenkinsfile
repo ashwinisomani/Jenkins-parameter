@@ -32,7 +32,7 @@ pipeline {
                   
                    def commit = scmVars.GIT_COMMIT
                    def branch = scmVars.GIT_BRANCH
-                   currentBuild.description = "BRANCH: ${env.GIT_BRANCH}, COMMIT: ${env.GIT_COMMIT}"
+                   currentBuild.description = "${env.GIT_BRANCH} ${env.GIT_COMMIT}"
             
                 }
              }
