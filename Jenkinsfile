@@ -31,7 +31,7 @@ pipeline {
                           slackSend (channel: 'xyz-build-failure', color: '#FF0000', message: """FAILED:
                          Job: ${GIT_CREDENTIALS_ID}
                          Build #${GIT_REPO})                    
-                                }
+                                },
                           success {
                          slackSend (channel: 'xyz-build-success', color: '#00FF00', message: """SUCCESS:
                           Job: ${env.GIT_CREDENTIALS_ID}
