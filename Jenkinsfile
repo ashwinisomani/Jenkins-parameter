@@ -32,7 +32,7 @@ pipeline {
             }
           steps {
                script{
-                    currentBuild.displayName = "#"+currentBuild.number+": "+branchName
+                    currentBuild.displayName = scmVars.GIT_BRANCH
                 }
              }
           }
