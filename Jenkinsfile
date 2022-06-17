@@ -29,6 +29,7 @@ pipeline {
       stage('Print Branch on Job') {
           steps {
                script{
+                    currentBuild.displayName = "#"+currentBuild.number+": "+currentBuilt.date+" "+currentBuilt.time
                     currentBuild.displayName = scmVars.GIT_COMMIT
                 }
              }
