@@ -32,7 +32,7 @@ pipeline {
           }
           steps {
                script{
-                    currentBuild.displayName =  "+CURRENT_BRANCH_NAME
+                   currentBuild.displayName =  "+${CURRENT_BRANCH_NAME}
                 }
              }
           }
