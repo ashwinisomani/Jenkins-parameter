@@ -27,8 +27,10 @@ pipeline {
       
       stage('Print Branch on Job') {
           steps {
-              echo "${branchName}"
+               script{
+                    currentBuild.displayName = "#"+currentBuild.number+": "+GIT_CREDENTIALS_ID
+                }
+             }
           }
-      }
+       }
    }
- }
