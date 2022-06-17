@@ -28,7 +28,7 @@ pipeline {
       stage('Print Branch on Job') {
           steps {
                script{
-                    currentBuild.displayName = "#"+currentBuild.number+": "+branchName
+                    currentBuild.displayName =  "+branchName+"
                 }
              }
           }
