@@ -26,7 +26,7 @@ pipeline {
             }
         }
      
-                   currentBuild.description = "${branchName} ${env.GIT_COMMIT
+      currentBuild.description = "${branchName} ${env.GIT_COMMIT}
           }
        }
    }
