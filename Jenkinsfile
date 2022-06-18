@@ -20,13 +20,15 @@ pipeline {
                                               submoduleCfg: [], 
                                               userRemoteConfigs: [[credentialsId: "${GIT_CREDENTIALS_ID}", url: "${GIT_REPO}"]]
                                    ])
+                        
+                              currentBuild.description = "${branchName} ${env.GIT_COMMIT}
                     }
                   
                 }
             }
         }
      
-      currentBuild.description = "${branchName} ${env.GIT_COMMIT}
+
           }
        }
    }
