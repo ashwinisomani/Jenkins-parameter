@@ -25,14 +25,8 @@ pipeline {
                 }
             }
         }
-      
-      stage('Print Branch on Job') {     
-          steps {
-               script{
-                   currentBuild.description = "${branchName} ${env.GIT_COMMIT}" 
-                   
-                }
-             }
+     
+                   currentBuild.description = "${branchName} ${env.GIT_COMMIT
           }
        }
    }
